@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon site Cloudflare</title>
+</head>
+<body>
+  <h1>✅ Site Cloudflare actif</h1>
+
+  <button onclick="loadApi()">Tester API</button>
+  <pre id="result"></pre>
+
+  <script>
+    async function loadApi() {
+      const res = await fetch('/api');
+      const data = await res.json();
+      document.getElementById('result').innerText =
+        JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
